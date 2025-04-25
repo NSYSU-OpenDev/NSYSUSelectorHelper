@@ -60,7 +60,7 @@ export const ANNOUNCEMENT_DATA = {
     <>
       當您使用本網站時，即表示您同意
       <a
-        href='https://github.com/CelleryLin/selector_helper/blob/main/term_of_use.md'
+        href='https://github.com/NSYSU-OpenDev/NSYSUSelectorHelper/blob/main/term_of_use.md'
         target='_blank'
         rel='noreferrer noopener'
       >
@@ -68,7 +68,7 @@ export const ANNOUNCEMENT_DATA = {
       </a>
     </>,
   ],
-  githubUrl: 'https://github.com/CelleryLin/selector_helper/',
+  githubUrl: 'https://github.com/NSYSU-OpenDev/NSYSUSelectorHelper/',
   contactEmail: 'yochen0123@gmail.com',
   copyright: [
     'By Cellery Lin (MEM113) and whats2000 (MIS114).',
@@ -109,11 +109,6 @@ export const ENTRY_NOTIFICATION_CONFIG = {
   ),
   updates: ['引入課程API，課程資料現在會每小時更新一次'],
   feedbackFormUrl: ANNOUNCEMENT_DATA.feedbackFormUrl,
-};
-
-export const COURSE_DATA_API = {
-  targetAPI:
-    'https://api.github.com/repos/CelleryLin/selector_helper_old/contents/all_classes',
 };
 
 export const HOW_TO_USE_EXPORT_CODE = [
