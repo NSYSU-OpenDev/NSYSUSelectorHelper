@@ -32,7 +32,7 @@ https://forms.gle/gFBZDgkSbj85zukP6
 ## 已知問題：
 * Safari 瀏覽器有可能會出現渲染問題，有任何選染錯誤請聯絡我，並註記您的瀏覽器版本。(如果願意擔當測試者，請在表單說想當 IOS 前端測試，不勝感激)
 * Bundle 初始化載入較慢，目前考慮使用 Vite 進行重構，如果有任何使用上卡頓的問題，請幫忙填寫表單反饋，並註記位置。
-* 課程資料是爬蟲下來的靜態資料，更新依賴於手動，計畫未來會進行自動化更新，但目前尚未進行。有興趣協助的話，請看[中山課程開放API](https://github.com/whats2000/NSYSUCourseAPI)
+* 課程資料是爬蟲下來的靜態資料，更新依賴於手動，計畫未來會進行自動化更新，但目前尚未進行。有興趣協助的話，請看[中山課程開放API](https://github.com/NSYSU-OpenDev/NSYSUCourseAPI)
 
 ## 錯誤回報 & 聯絡：
 * 總負責人：yochen0123@gmail.com
