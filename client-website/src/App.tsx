@@ -9,6 +9,7 @@ import LoadingSpinner from './components/LoadingSpinner';
 import ScheduleTable from './components/ScheduleTable';
 import SelectorSetting from './components/SelectorSetting';
 import EntryNotification from './components/EntryNotification';
+import VersionAlert from './components/VersionAlert';
 import type {
   AcademicYear,
   Course,
@@ -80,6 +81,7 @@ interface AppState {
     availableSemesters: AcademicYear;
   };
   clickedCourseId?: string | null;
+  showVersionAlert: boolean;
 }
 
 class App extends Component<{}, AppState> {
@@ -103,6 +105,7 @@ class App extends Component<{}, AppState> {
       },
     },
     clickedCourseId: null,
+    showVersionAlert: true, // Default to true, will be updated by VersionAlert component
   };
 
   componentDidMount() {
@@ -427,6 +430,14 @@ class App extends Component<{}, AppState> {
   };
 
   /**
+   * 處理版本提醒顯示狀態變更
+   * @param show {boolean} 是否顯示版本提醒
+   */
+  onVersionAlertVisibilityChange = (show: boolean) => {
+    this.setState({ showVersionAlert: show });
+  };
+
+  /**
    * 渲染元件
    * @returns {React.ReactNode} 元件
    */
@@ -443,6 +454,7 @@ class App extends Component<{}, AppState> {
       loading,
       searchTimeSlot,
       clickedCourseId,
+      showVersionAlert,
     } = this.state;
     const slideStyle = {
       marginLeft: isCollapsed ? (window.innerWidth >= 992 ? '-50%' : '0') : '0',
@@ -467,6 +479,9 @@ class App extends Component<{}, AppState> {
           }
           onSemesterChange={this.onSemesterChange}
         />
+        <VersionAlert
+          onVisibilityChange={this.onVersionAlertVisibilityChange}
+        />
         <EntryNotification />
         {loading && <LoadingSpinner loadingName={loading} />}
         {/* bookmark */}
@@ -477,7 +492,10 @@ class App extends Component<{}, AppState> {
           {isCollapsed ? <ArrowBarRight /> : <ArrowBarLeft />}
         </ToggleButton>
 
-        <MainContent id='app' className='container-fluid'>
+        <MainContent
+          id='app'
+          className={`container-fluid ${showVersionAlert ? 'with-version-alert' : ''}`}
+        >
           <Row className='d-flex flex-wrap'>
             <SlideColContainer
               style={slideStyle}
