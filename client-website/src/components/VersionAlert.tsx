@@ -58,6 +58,10 @@ const StyledAlert = styled(Alert)`
     color: #1565c0;
     font-size: 1.2rem;
     padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2rem;
 
     &:hover {
       color: #0d47a1;
